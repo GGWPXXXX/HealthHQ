@@ -2,11 +2,28 @@
 #include <string>
 #include <cstdlib>
 #include <windows.h>
+#include <fstream>
+#include "../HealthHQ/json/single_include/nlohmann/json.hpp"
+
 using namespace std;
+using json = nlohmann::json;
+
+void Login(string username, string password)
+{
+    std::ifstream file("../HealthHQ/Patient/Patient_credential.json");
+    json data;
+    file>> data;
+    for (auto& element : data.items())
+    {
+        string key = element.key();
+        json value = element.value();
+        cout<<key<<value;
+    }
+}
 
 int main()
 {
-
+    Login("nakenat12", "a123");
     while (true)
     {
         int choice;
