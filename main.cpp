@@ -1,3 +1,4 @@
+// Import all necessary module.
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -10,22 +11,22 @@ using json = nlohmann::json;
 
 void Login(string username, string password)
 {
-    std::ifstream file("../HealthHQ/Patient/Patient_credential.json");
+    ifstream file("../HealthHQ/Patient/Patient_credential.json");
     json data;
     file>> data;
     for (auto& element : data.items())
     {
         string key = element.key();
         json value = element.value();
-        cout<<key<<value;
+        cout<<key<<value["personal_id"];
     }
 }
-
 int main()
 {
     Login("nakenat12", "a123");
     while (true)
     {
+        // Main menu
         int choice;
         cout<<"Welcome to GG_WPX Hospital"<<endl;
         cout<<"----------------------------"<<endl;
