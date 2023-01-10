@@ -39,6 +39,10 @@ class Patient{
             }
             return false;
         }  
+        void showMedicalHistory()
+        {
+            
+        }
     
 };
 int main()

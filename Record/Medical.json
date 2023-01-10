@@ -1,0 +1,20 @@
+{
+    "1948822365845":{
+        "test-result":{
+            "HIV":"Positive"
+        },
+        "diagnoses":{
+            "Hypertension":"Positive",
+            "Anemia":"Positive",
+            "Hyperlipidemia":"Positive",
+            "Fluid and electrolyte disorders":"Negative",
+            "Coronary atherosclerosis":"Negative",
+            "Diabetes mellitus without complications":"Negative",
+            "Cardiac dysrhythmias":"Negative",
+            "Esophageal disorders":"Negative",
+            "Mood disorders":"Negative"
+        },
+        "treatment plans":
+
+    }
+}
