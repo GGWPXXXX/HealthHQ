@@ -26,8 +26,6 @@ class Patient{
             json data;
             ifstream file("../HealthHQ/Patient/Patient_credential.json");
             file>>data;
-            cout<<id<<"\n";
-            cout<<birth<<"\n";
             for (auto& element: data.items())
             {
                 string key = element.key();
@@ -39,14 +37,50 @@ class Patient{
             }
             return false;
         }  
-        void showMedicalHistory()
+        void showAppointments()
         {
-            
+            json appointment_data;
+            ifstream file("../HealthHQ/Record/Appointment.json");
+            file>>appointment_data;
+            for(auto& element : appointment_data.items())
+            {
+                string num = element.key();
+                json information = element.value();
+                if (id == information["personal_id"] && birth == information["date_of_birth"])
+                {
+                    int appointment_num = 1;
+                    for (auto & sche : information["appointment"].items())
+                    {
+
+                        string key = sche.key();
+                        json sche_info = sche.value();
+                        if (sche_info["status"] == "confirmed" || sche_info["status"] == "pending")
+                        {
+
+                            cout<<"--------------------------------------------------------\n";
+                            cout<<"Your appointment number # "<<appointment_num<<" are the following\n";
+                            cout<<"--------------------------------------------------------\n";
+                            cout<<"Symptom: "<<sche_info["symptoms"]<<"\n";
+                            cout<<"Date: "<<sche_info["date"]<<"\n";
+                            cout<<"Doctor: "<<sche_info["doctor"]<<"\n";
+                            appointment_num ++ ;
+                        }
+                        else
+                        {
+                            cout<<"Sorry there's no appointment scheduled for you.";
+                        
+                        }
+                    
+                    }
+                
+                }           
+            }
         }
+
     
 };
 int main()
 {
     Patient Patient1("1948822365845", "31122546");
-    cout<<Patient1.isPatient();
+    Patient1.showAppointments();
 }

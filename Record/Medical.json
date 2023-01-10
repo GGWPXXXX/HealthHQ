@@ -1,5 +1,18 @@
 {
-    "1948822365845":{
+    "1":{
+        "personal_id":"1948822365845",
+        "name":"Pattdon",
+        "lastname":"Loyprasert",
+        "treatment_record":{
+            "31/08/2000":{
+                "HPI":"History of present illness",
+                "CC":"Chief Complaint",
+                "physical_examination":{
+                    "vital_signs":"BP 110/68 P 72 RR 14 T 98.4F Wt 160lb Ht 68 in",
+                    "CV":"Explain the symtoms of the patient."
+                }
+            }
+        },
         "test-result":{
             "HIV":"Positive"
         },
@@ -13,8 +26,6 @@
             "Cardiac dysrhythmias":"Negative",
             "Esophageal disorders":"Negative",
             "Mood disorders":"Negative"
-        },
-        "treatment plans":
-
+        }
     }
 }
