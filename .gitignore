@@ -351,3 +351,6 @@ MigrationBackup/
 
 # Ignore json folder that use in this project.
 json-develop/
+
+tempCodeRunnerFile.cpp/
+tempCodeRunnerFile.exe/
