@@ -4,12 +4,13 @@
 #include <cstdlib>
 #include <windows.h>
 #include <fstream>
-#include "../HealthHQ/json/single_include/nlohmann/json.hpp"
+#include "../HealthHQ/json-develop/single_include/nlohmann/json.hpp"
 
 using namespace std;
 using json = nlohmann::json;
 
 void Login(string username, string password)
+
 {
     ifstream file("../HealthHQ/Patient/Patient_credential.json");
     json data;
@@ -22,13 +23,13 @@ void Login(string username, string password)
     }
 }
 int main()
+
 {
     Login("nakenat12", "a123");
     while (true)
     {
         // Main menu
         int choice;
-        cout<<"Welcome to GG_WPX Hospital"<<endl;
         cout<<"----------------------------"<<endl;
         cout<<"Please select an option from the menu below"<<endl;
         cout<<"1. Make an appointment.\n";
@@ -52,10 +53,10 @@ int main()
             break;
         
         default:
-            system("clear");
+            system("cls");
             cout<<"Invalid input.\n";
             Sleep(1000);
-            system("clear");
+            system("cls");
             break;
         }
     }
