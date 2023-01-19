@@ -27,21 +27,21 @@ class Patient{
                 json dataTable = element.value();
                 if (dataTable["personal_id"] == personal_id && dataTable["date_of_birth"] == date_of_birth)
                 {
-                    std::map<std::string, std::string> form;
-                    form["personal_id"] = dataTable["personal_id"];
-                    form["name"] = new_name;
-                    form["lastname"] = dataTable["lastname"];
-                    form["date_of_birth"] = dataTable["date_of_birth"];
-                    form["gender"] = dataTable["gender"];
-                    form["address"] = dataTable["address"];
-                    form["phone"] = dataTable["phone"];
-                    form["email"] = dataTable["email"];
-
-                    patient_data[key].update(form);  
-                        
+                    std::map<std::string, std::string> form = {
+                        {"personal_id", dataTable["personal_id"]},
+                        {"name", new_name},
+                        {"lastname", dataTable["lastname"]},
+                        {"date_of_birth", dataTable["date_of_birth"]},
+                        {"gender", dataTable["gender"]},
+                        {"address", dataTable["address"]},
+                        {"phone", dataTable["phone"]},
+                        {"email", dataTable["email"]}
+                    };
+                    patient_data[key].update(form); 
                     ofstream jsonFile("../HealthHQ/Patient/Patient_credential.json");
                     jsonFile << patient_data.dump(4);
                     jsonFile.close();
+
                     return true;
                 }
             }
