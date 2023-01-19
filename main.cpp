@@ -9,19 +9,6 @@
 using namespace std;
 using json = nlohmann::json;
 
-void Login(string username, string password)
-
-{
-    ifstream file("../HealthHQ/Patient/Patient_credential.json");
-    json data;
-    file>> data;
-    for (auto& element : data.items())
-    {
-        string key = element.key();
-        json value = element.value();
-        cout<<key<<value["personal_id"];
-    }
-}
 int main()
 
 {
